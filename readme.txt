@@ -1,5 +1,5 @@
-mkdir fastapi_app
-cd fastapi_app
+mkdir fastapi
+cd fastapi
 python -m venv venv  # Create virtual environment
 venv\Scripts\activate
 pip install fastapi uvicorn
