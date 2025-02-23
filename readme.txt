@@ -8,4 +8,8 @@ pip freeze > requirements.txt
 #!/bin/bash
 gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app
 pip install Jinja2
+pip install scikit-learn
+pip install sklearn
+
+
 

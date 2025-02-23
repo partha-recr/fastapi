@@ -29,7 +29,7 @@ def predict_cluster_from_pickle(new_texts):
     return predicted_clusters
 
 @app.post("/predict")
-def predictActions():
+def predictActions(request: Request):
     inputValue = request.form['inputError']
     print('Value is:',inputValue)
     arr = np.array([inputValue])
