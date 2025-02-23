@@ -7,4 +7,5 @@ uvicorn main:app --reload
 pip freeze > requirements.txt
 #!/bin/bash
 gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app
+pip install Jinja2
 

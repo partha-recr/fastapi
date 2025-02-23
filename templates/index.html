@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+  <body>
+
+    <div class="prediction">
+      <div class="top-heading">
+        <b>
+          <h1>Please Provide Input:{{ message }}</h1>
+          <form action="/predict" method="post">            
+            <textarea name="inputError" rows="20" cols="150" placeholder="Enter Error String"></textarea>
+            <button type="submit">Submit</button>
+          </form>
+
+        </b>
+      </div>
+    </div>
+
+  </body>
