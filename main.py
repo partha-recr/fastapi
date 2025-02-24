@@ -1,4 +1,4 @@
-from fastapi import FastAPI,Request
+from fastapi import FastAPI,Request,Form
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -29,19 +29,11 @@ def predict_cluster_from_pickle(new_texts):
     return predicted_clusters
 
 @app.post("/predict")
-def predictActions(request: Request):
-    inputValue = request.form['inputError']
-    print('Value is:',inputValue)
-    arr = np.array([inputValue])
-    print('Arr value is:',arr)
+def predictActions(inputError: str = Form(...)):
+    arr = np.array([inputError])
     predicted_clusters_values = predict_cluster_from_pickle(arr)
     print('Predicted val:',predicted_clusters_values[0]) 
     return str(predicted_clusters_values[0])
-
-#@app.get("/")
-#def home():
-#    return render_template('index.html')
-#    return {"message": "Welcome to FastAPI"}
 
 @app.get("/greet/{name}")
 def greet(name: str):
